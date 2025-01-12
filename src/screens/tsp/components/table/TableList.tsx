@@ -1,8 +1,6 @@
 import * as React from "react";
 import {
-  Box,
   Collapse,
-  IconButton,
   Table,
   TableBody,
   TableCell,
@@ -10,7 +8,6 @@ import {
   TableHead,
   TableRow,
   Typography,
-  Container,
   useTheme,
   Card,
 } from "@mui/material";
@@ -76,7 +73,6 @@ const TableList: React.FC<TableListProps> = ({
             </TableCell>
             <TableCell align="right">
               <Typography
-                variant="body1Medium"
                 sx={{
                   paddingRight: 6,
                   paddingBottom: 0,
@@ -180,7 +176,6 @@ const TableList: React.FC<TableListProps> = ({
                           <TableRow>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
                                   fontSize:
@@ -195,7 +190,6 @@ const TableList: React.FC<TableListProps> = ({
                             </TableCell>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
                                   fontSize:

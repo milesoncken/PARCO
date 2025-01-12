@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Box, Container, Button, Typography } from "@mui/material";
+import { Container, Button, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 function Header({ onTabChange }) {

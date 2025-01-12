@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Container, Button, Typography } from "@mui/material";
-import { PieChart } from "@mui/x-charts/PieChart";
+import { useState } from "react";
+import { Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Header from "./components/header/Header";
 import Pie from "./components/pie/Pie";
@@ -9,7 +8,7 @@ import TableList from "./components/table/TableList";
 function TSP() {
   const theme = useTheme();
   //IDs are currently set to how they are on figma, i sorted by value beacuse i think it looks nicer
-  let data = [
+  const data = [
     { id: 1, value: 64198, title: "G Fund", color: theme.palette.primary.main },
     {
       id: 0,

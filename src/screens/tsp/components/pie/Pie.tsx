@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Container, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Container, Typography } from "@mui/material";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useTheme } from "@mui/material/styles";
 import { HighlightItemData } from "@mui/x-charts/context";
