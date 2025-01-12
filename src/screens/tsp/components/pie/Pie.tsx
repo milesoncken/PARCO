@@ -135,7 +135,7 @@ function Pie({ data, onSelectionChange, selected }: PieProps) {
           sx={{
             mt: 1,
             fontSize: theme.typography.h3.fontSize,
-            color: "#F1F1F1",
+            color: "#373B47",
           }}
         >
           {`$${getValue().toLocaleString()}`}

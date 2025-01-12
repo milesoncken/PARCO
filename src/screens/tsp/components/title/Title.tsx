@@ -25,7 +25,7 @@ function Title({ highlighted, data }: TitleProps) {
 
   const textColor = isValidHighlight
     ? theme.palette.background.default
-    : "#F1F1F1";
+    : "#373B47";
 
   const titleText = isValidHighlight ? data[highlighted].title : "TSP Total";
 
