@@ -63,9 +63,9 @@ const TableList: React.FC<TableListProps> = ({
               <Typography
                 variant="body1"
                 sx={{
-                  fontSize: theme.typography.body1Medium.fontSize,
-                  fontWeight: theme.typography.body1Medium.fontWeight,
-                  color: theme.palette.gray.medium,
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  color: "#A3A7AA",
                 }}
               >
                 Items
@@ -76,9 +76,9 @@ const TableList: React.FC<TableListProps> = ({
                 sx={{
                   paddingRight: 6,
                   paddingBottom: 0,
-                  fontSize: theme.typography.body1Medium.fontSize,
-                  fontWeight: theme.typography.body1Medium.fontWeight,
-                  color: theme.palette.gray.medium,
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  color: "#A3A7AA",
                 }}
               >
                 Total Value
@@ -95,15 +95,12 @@ const TableList: React.FC<TableListProps> = ({
                   //tried for a while to get hovering to work how it should, sibling css classes are as close as i could get
                   //grid might be a better solution for this
                   ":hover": {
-                    backgroundColor: theme.palette.gray.lightest,
+                    backgroundColor: "#F1F1F1",
                   },
                   "& > *": {
                     borderBottom: "0",
                   },
-                  backgroundColor:
-                    open === index
-                      ? theme.palette.gray.lightest
-                      : "transparent",
+                  backgroundColor: open === index ? "#F1F1F1" : "transparent",
                 }}
               >
                 <TableCell
@@ -129,7 +126,7 @@ const TableList: React.FC<TableListProps> = ({
                     sx={{
                       fontSize: theme.typography.body2.fontSize,
                       fontWeight: theme.typography.body2.fontWeight,
-                      color: theme.palette.gray.dark,
+                      color: "#495057",
                     }}
                   >
                     {`$${row.value.toLocaleString()}`}
@@ -151,7 +148,7 @@ const TableList: React.FC<TableListProps> = ({
               <TableRow
                 onClick={() => handleRowClick(index)}
                 sx={{
-                  backgroundColor: theme.palette.gray.lightest,
+                  backgroundColor: "#F1F1F1",
                 }}
               >
                 <TableCell
@@ -178,11 +175,9 @@ const TableList: React.FC<TableListProps> = ({
                               <Typography
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.medium,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#A3A7AA",
                                 }}
                               >
                                 Risk Level
@@ -192,11 +187,9 @@ const TableList: React.FC<TableListProps> = ({
                               <Typography
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.dark,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#495057",
                                 }}
                               >
                                 10
@@ -206,14 +199,11 @@ const TableList: React.FC<TableListProps> = ({
                           <TableRow>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.medium,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#A3A7AA",
                                 }}
                               >
                                 Examples
@@ -221,14 +211,11 @@ const TableList: React.FC<TableListProps> = ({
                             </TableCell>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.dark,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#495057",
                                 }}
                               >
                                 Apple, Google, Microsoft, Meta, Tesla
@@ -238,14 +225,11 @@ const TableList: React.FC<TableListProps> = ({
                           <TableRow>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.medium,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#A3A7AA",
                                 }}
                               >
                                 Description
@@ -253,14 +237,11 @@ const TableList: React.FC<TableListProps> = ({
                             </TableCell>
                             <TableCell>
                               <Typography
-                                variant="body2Medium"
                                 sx={{
                                   paddingRight: 2,
-                                  fontSize:
-                                    theme.typography.body2Medium.fontSize,
-                                  fontWeight:
-                                    theme.typography.body2Medium.fontWeight,
-                                  color: theme.palette.gray.dark,
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  color: "#495057",
                                 }}
                               >
                                 Very volatile, will reap the most rewards from

@@ -4,45 +4,30 @@ import { useTheme } from "@mui/material/styles";
 import Header from "./components/header/Header";
 import Pie from "./components/pie/Pie";
 import TableList from "./components/table/TableList";
+import { HighlightItemData } from "@mui/x-charts/context";
 
 function TSP() {
   const theme = useTheme();
-  //IDs are currently set to how they are on figma, i sorted by value beacuse i think it looks nicer
   const data = [
     { id: 1, value: 64198, title: "G Fund", color: theme.palette.primary.main },
-    {
-      id: 0,
-      value: 50150,
-      title: "C Fund",
-      color: theme.palette.gray.mediumDark,
-    },
+    { id: 0, value: 50150, title: "C Fund", color: "#75787B" },
     {
       id: 3,
       value: 22739,
       title: "Y Fund",
       color: theme.palette.secondary.dark,
     },
-    {
-      id: 4,
-      value: 22739,
-      title: "S Fund",
-      color: theme.palette.customColors.black,
-    },
+    { id: 4, value: 22739, title: "S Fund", color: "#262627" },
     {
       id: 5,
       value: 22739,
       title: "F Fund",
       color: theme.palette.action.selected,
     },
-    {
-      id: 2,
-      value: 16640,
-      title: "I Fund",
-      color: theme.palette.customColors.pastelWater,
-    },
+    { id: 2, value: 16640, title: "I Fund", color: "#ADC5E3" },
   ];
 
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<HighlightItemData | null>(null);
   const [tab, setTab] = useState(0);
 
   return (
@@ -58,13 +43,12 @@ function TSP() {
       <Pie
         selected={selected}
         onSelectionChange={setSelected}
-        //manually setting data to a slice because we dont have any real data to show that the components work dynamically
-        data={tab == 0 ? data : data.slice(0, 3)}
+        data={tab === 0 ? data : data.slice(0, 3)}
       />
       <TableList
         onSelectionChange={setSelected}
         selected={selected}
-        data={tab == 0 ? data : data.slice(0, 3)}
+        data={tab === 0 ? data : data.slice(0, 3)}
       />
     </Container>
   );

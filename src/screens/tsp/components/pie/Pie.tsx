@@ -4,8 +4,22 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { useTheme } from "@mui/material/styles";
 import { HighlightItemData } from "@mui/x-charts/context";
 import Title from "../title/Title";
+import { PieItemIdentifier } from "@mui/x-charts";
 
-function Pie({ data, onSelectionChange, selected }) {
+interface DataItem {
+  value: number;
+
+  color: string;
+  title: string;
+}
+
+interface PieProps {
+  data: DataItem[];
+  onSelectionChange: (selected: HighlightItemData | null) => void;
+  selected: HighlightItemData | null;
+}
+
+function Pie({ data, onSelectionChange, selected }: PieProps) {
   const theme = useTheme();
 
   const [selectedItem, setSelectedItem] = useState<HighlightItemData | null>(
@@ -32,14 +46,17 @@ function Pie({ data, onSelectionChange, selected }) {
     setHoveredItem(highlight);
   };
 
-  const handleItemClick = (e: any, item: HighlightItemData) => {
-    if (selectedItem?.dataIndex === item?.dataIndex) {
+  const handleItemClick = (
+    _event: React.MouseEvent,
+    pieItemIdentifier: PieItemIdentifier
+  ) => {
+    if (selectedItem?.dataIndex === pieItemIdentifier?.dataIndex) {
       resetSelection();
       onSelectionChange(null);
     } else {
-      setSelectedItem(item);
-      setHoveredItem(item);
-      onSelectionChange(item);
+      setSelectedItem(pieItemIdentifier);
+      setHoveredItem(pieItemIdentifier);
+      onSelectionChange(pieItemIdentifier);
     }
   };
 
@@ -48,12 +65,17 @@ function Pie({ data, onSelectionChange, selected }) {
   const getValue = () => {
     const activeItem = selectedItem || hoveredItem;
 
-    if (activeItem === null || !data[activeItem.dataIndex]) {
+    if (
+      activeItem === null ||
+      typeof activeItem.dataIndex !== "number" ||
+      !data[activeItem.dataIndex]
+    ) {
       return data.reduce((acc, item) => acc + item.value, 0);
     } else {
       return data[activeItem.dataIndex].value;
     }
   };
+
   return (
     <Container
       maxWidth="sm"
@@ -104,13 +126,16 @@ function Pie({ data, onSelectionChange, selected }) {
           width: 300,
         }}
       >
-        <Title highlighted={getHighlightedItem()?.dataIndex} data={data} />
+        <Title
+          highlighted={getHighlightedItem()?.dataIndex ?? null}
+          data={data}
+        />
         <Typography
           variant="h3"
           sx={{
             mt: 1,
             fontSize: theme.typography.h3.fontSize,
-            color: theme.palette.gray.darkest,
+            color: "#F1F1F1",
           }}
         >
           {`$${getValue().toLocaleString()}`}

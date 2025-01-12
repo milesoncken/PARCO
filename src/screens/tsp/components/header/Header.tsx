@@ -1,9 +1,12 @@
 import { useState } from "react";
-
 import { Container, Button, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-function Header({ onTabChange }) {
+interface HeaderProps {
+  onTabChange: (tabIndex: number) => void;
+}
+
+function Header({ onTabChange }: HeaderProps) {
   const [tab, setTab] = useState(0);
   const theme = useTheme();
 
@@ -28,12 +31,11 @@ function Header({ onTabChange }) {
             boxShadow: "none",
           },
           ":hover": {
-            backgroundColor: theme.palette.gray.lightest,
+            backgroundColor: "#F1F1F1",
           },
           textTransform: "none",
           borderRadius: 30,
-          backgroundColor:
-            tab === 0 ? theme.palette.gray.lightest : "transparent",
+          backgroundColor: tab === 0 ? "#F1F1F1" : "transparent",
         }}
       >
         <Typography
@@ -41,12 +43,9 @@ function Header({ onTabChange }) {
           sx={{
             paddingY: 1,
             paddingX: 2,
-            fontWeight: theme.typography.body1Medium.fontWeight,
+            fontWeight: 600,
             fontSize: theme.typography.h6.fontSize,
-            color:
-              tab === 0
-                ? theme.palette.gray.dark
-                : theme.palette.secondary.dark,
+            color: tab === 0 ? "#495057" : theme.palette.secondary.dark,
           }}
         >
           TSP Holdings
@@ -64,13 +63,12 @@ function Header({ onTabChange }) {
             boxShadow: "none",
           },
           ":hover": {
-            backgroundColor: theme.palette.gray.lightest,
+            backgroundColor: "#F1F1F1",
           },
           marginLeft: 1,
           textTransform: "none",
           borderRadius: 30,
-          backgroundColor:
-            tab === 1 ? theme.palette.gray.lightest : "transparent",
+          backgroundColor: tab === 1 ? "#F1F1F1" : "transparent",
         }}
       >
         <Typography
@@ -78,12 +76,9 @@ function Header({ onTabChange }) {
           sx={{
             paddingY: 1,
             paddingX: 2,
-            fontWeight: theme.typography.body1Medium.fontWeight,
+            fontWeight: 600,
             fontSize: theme.typography.h6.fontSize,
-            color:
-              tab === 1
-                ? theme.palette.gray.dark
-                : theme.palette.secondary.dark,
+            color: tab === 1 ? "#495057" : theme.palette.secondary.dark,
           }}
         >
           Look Through Holdings

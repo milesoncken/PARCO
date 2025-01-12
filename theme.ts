@@ -20,22 +20,6 @@ const theme = createTheme({
     action: {
       selected: "#21B8FD", // Parco Highlight Real
     },
-    gray: {
-      darkest: "#373b47",
-      dark: "#495057", // Dark Gray
-      mediumDark: "#75787B", // Medium Dark Gray
-      medium: "#A3A7AA", // Medium Gray
-      light: "#D2D6DA", // Light Gray
-      lightest: "#F1F1F1", // Lightest Gray
-    },
-    customColors: {
-      faintest: "#EFF0F7", // Faintest Blue
-      brightWater: "#E4F0FF", // Bright Water
-      pastelWater: "#ADC5E3", // Pastel Water
-      darkShade: "#293852", // Dark shade
-      accentDark: "#044F79", // Accent Dark
-      black: "#262627",
-    },
   },
 
   typography: {
@@ -85,36 +69,6 @@ const theme = createTheme({
       fontFamily: '"Inter", "Arial", sans-serif',
       fontWeight: 400, // Regular
       fontSize: "16px",
-      letterSpacing: "0%",
-    },
-    body1Medium: {
-      fontFamily: '"Inter", "Arial", sans-serif',
-      fontWeight: 600, // Semi Bold
-      fontSize: "18px",
-      letterSpacing: "0px",
-    },
-    body2Medium: {
-      fontFamily: '"Inter", "Arial", sans-serif',
-      fontWeight: 600, // Medium
-      fontSize: "16px",
-      letterSpacing: "0%",
-    },
-    body3: {
-      fontFamily: '"Inter", "Arial", sans-serif',
-      fontWeight: 400, // Regular
-      fontSize: "14px",
-      letterSpacing: "0%",
-    },
-    body3Medium: {
-      fontFamily: '"Poppins", "Arial", sans-serif',
-      fontWeight: 600, // Semi Bold
-      fontSize: "14px",
-      letterSpacing: "2%",
-    },
-    body3ActuallyMedium: {
-      fontFamily: '"Inter", "Arial", sans-serif',
-      fontWeight: 500, // Medium
-      fontSize: "14px",
       letterSpacing: "0%",
     },
   },

@@ -1,8 +1,17 @@
 import { Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-//tag probably would have been a better name for this
-function Title({ highlighted, data }) {
+interface DataItem {
+  color: string;
+  title: string;
+}
+
+interface TitleProps {
+  highlighted: number | null;
+  data: DataItem[];
+}
+
+function Title({ highlighted, data }: TitleProps) {
   const theme = useTheme();
 
   const isValidHighlight =
@@ -16,7 +25,7 @@ function Title({ highlighted, data }) {
 
   const textColor = isValidHighlight
     ? theme.palette.background.default
-    : theme.palette.gray.darkest;
+    : "#F1F1F1";
 
   const titleText = isValidHighlight ? data[highlighted].title : "TSP Total";
 
@@ -28,7 +37,7 @@ function Title({ highlighted, data }) {
         justifySelf: "center",
         paddingX: 1.5,
         paddingY: 0.5,
-        fontWeight: theme.typography.body1Medium.fontWeight,
+        fontWeight: 600,
         fontSize: theme.typography.h6.fontSize,
         color: textColor,
         backgroundColor: backgroundColor,
