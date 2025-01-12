@@ -35,6 +35,7 @@ function TSP() {
       fixed
       maxWidth="sm"
       sx={{
+        scale: 0.85,
         backgroundColor: theme.palette.background.default,
         padding: 4,
       }}
