@@ -1,6 +1,3 @@
-# this doesn't build because of typescript errors, can build in dev though
-
-
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
